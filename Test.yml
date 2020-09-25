@@ -1,31 +1,105 @@
-"symfony 1.0":
-  end_of_maintainance: 2010-01-01
-  is_stable:           true
-  release_manager:     "Gregoire Hubert"
-  description: >
-    This stable version is the right choice for projects
-    that need to be maintained for a long period of time.
-  latest_beta:         ~
-  latest_minor:        1.0.20
-  supported_orms:      [Propel]
-  archives:            { source: [zip, tgz], sandbox: [zip, tgz] }
- 
-"symfony 1.2":
-  end_of_maintainance: 2008-11-01
-  is_stable:           true
-  release_manager:     'Fabian Lange'
-  description: >
-    This stable version is the right choice
-    if you start a new project today.
-  latest_beta:         null
-  latest_minor:        1.2.5
-  supported_orms:
-    - Propel
-    - Doctrine
-  archives:
-    source:
-      - zip
-      - tgz
-    sandbox:
-      - zip
-      - tgz
+# Project information
+site_name: Algorithme et langage C
+site_description: Cours 
+site_author: Merzaq Said
+#site_url: https://squidfunk.github.io/mkdocs-material/
+site_description: >-
+  Create a branded static site from a set of Markdown files to host the
+  documentation of your Open Source or commercial project – customizable,
+  searchable, mobile-friendly, 40+ languages
+# Copyright
+copyright: Copyright &copy; 2019 - 2020 Merzaq Said
+# extras
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js
+  - javascripts/tables.js
+  - javascripts/config.js
+  #- javascripts/extra.js
+extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css
+  #- stylesheets/extra.css
+nav:
+    - Home: index.md
+    - About: about.md
+    - Introduction: intro.md
+    - Généralités: env.md
+    - Langage C: Langage_C.md 
+    - Solutions: Solutions.md
+    - Pour commencer: getting-started.md
+theme:
+    name: material
+    #custom_dir: overrides
+    features:
+        - instant
+    palette:
+      scheme: default
+      primary: green
+      accent: indigo
+    font:
+      text: Roboto
+      code: Roboto Mono
+    favicon: assets/favicon.ico
+    nav_style: dark
+    highlightjs: true
+    hljs_languages:
+        - yaml
+        - rust
+        - c
+    shortcuts:
+        help: 191    # ?
+        next: 78     # n
+        previous: 80 # p
+        search: 83   # s 
+plugins:
+    - search
+    - minify:
+        minify_html: true
+        minify_js: true
+        htmlmin_opts:
+          remove_comments: true
+    - awesome-pages:
+        filename: .index
+        collapse_single_pages: false
+        strict: false
+markdown_extensions:  
+    - admonition # notes make pretty
+    - footnotes
+    - meta # page-specific context
+    - toc:
+        permalink: "#"
+        baselevel: 2
+        separator: "_"
+    - sane_lists # better ul and ol
+    - nl2br # newline hard break
+    - pymdownx.betterem:   # better italic and bold
+        smart_enable:      asterisk
+    - pymdownx.caret # insert text and superscript
+    - pymdownx.details # details and summary; work with admonition
+    - pymdownx.emoji:
+        emoji_index:       !!python/name:pymdownx.emoji.twemoji
+        emoji_generator:   !!python/name:pymdownx.emoji.to_svg
+    - pymdownx.highlight: # better code, instead of CodeHilite 
+        linenums: true
+        linenums_style: pymdownx.inline
+    - pymdownx.inlinehilite  # like codehilite but inline
+    - pymdownx.magiclink # auto links
+    - pymdownx.mark # highlight text
+    - pymdownx.smartsymbols # special symbols
+    - pymdownx.arithmatex:
+        generic: true
+    - pymdownx.superfences # nest code blocks under other blocks   <-------
+    - pymdownx.tasklist:   # better tasks lists
+        custom_checkbox:   true
+    - pymdownx.tabbed # auto tabs
+    - pymdownx.tilde # strike through cross out text     
+    - pymdownx.keys
+    - pymdownx.superfences
+    
+    
+
+
+    
+        
